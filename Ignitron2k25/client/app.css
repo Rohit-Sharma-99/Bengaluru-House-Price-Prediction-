@@ -1,0 +1,405 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+
+/* ======= GENERAL STYLING ======= */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* ======= NAVBAR STYLING ======= */
+nav {
+    background-color: #333;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 18px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav a:hover, nav a.active {
+    background-color: #ffcc00;
+    color: black;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ======= HOME SECTION ======= */
+#home {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-gap: 20px;
+    padding: 40px;
+    background-color: #fff;
+}
+
+/* ======= HOME TITLE ======= */
+/* Fancy Text Styling */
+.fancy-text {
+    font-family: 'Playfair Display', serif; /* Stylish Font */
+    font-size: 5.5em;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(45deg, #ff8c00, #ffcc00); /* Gold Gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 4px 4px 8px hsla(0, 0%, 0%, 0.336); /* Fancy Shadow */
+    margin-bottom: 10px;
+}
+
+.sub-heading {
+    font-family: 'Dancing Script', cursive; /* Elegant Handwritten Font */
+    font-size: 2em;
+    color: #444;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.home-title {
+    grid-column: span 2;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.home-title h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.home-title p {
+    font-size: 1.8em;
+    color: hsl(0, 0%, 0%);
+    max-width: 800px;
+    font-weight: 600;
+    font-family: cursive;
+    margin: 0 auto;
+}
+
+/* ======= IMAGE GRID ======= */
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* ======= BIG IMAGE ======= */
+.big-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.big-image:hover {
+    transform: scale(1.05);
+}
+
+/* ======= PREDICTION FORM STYLING ======= */
+.form {
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* ======= FORM INPUTS ======= */
+.area, .location {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 40px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.area:focus, .location:focus {
+    background-color: #fff;
+    border-color: #a5dc86;
+}
+
+/* ======= SUBMIT BUTTON ======= */
+.submit {
+    background: #ffcc00;
+    width: 100%;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit:hover {
+    background: #e6b800;
+}
+
+/* ======= RESULT BOX ======= */
+.result {
+    background: #dcd686;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+}
+
+/* ======= SWITCH FIELD ======= */
+.switch-field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.switch-field input {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+
+.switch-field label {
+    background-color: #e4e4e4;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    text-align: center;
+    padding: 8px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.switch-field label:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+.switch-field input:checked + label {
+    background-color: #ffcc00;
+    color: black;
+}
+
+
+/* Import a modern stylish font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+/* Apply stylish fonts to the entire section */
+#more {
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tech Stack Section */
+.tech-stack {
+    margin-bottom: 30px;
+}
+
+.tech-stack h3 {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Tech Stack Logos with More Space */
+.logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px; /* Increased spacing between logos */
+    margin-bottom: 20px;
+}
+
+.logos img {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.logos img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+/* Tech Stack Description */
+/* Style for the tech stack in the paragraph */
+.tech-description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555; /* Regular text color */
+}
+
+.tech-description span {
+    font-weight: bold;
+    color: #000; /* Dark black color for tech stack */
+}
+
+/* Housing Table Styles */
+/* Housing Table Styles */
+.housing-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.housing-table th, .housing-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.housing-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* Darker Row Hover Effect */
+.housing-table tr:hover {
+    background-color: hsla(0, 0%, 0%, 0.24); /* Slightly darker on hover */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.housing-table a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.housing-table a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logos {
+        gap: 15px;
+    }
+
+    .logos img {
+        width: 60px;
+    }
+
+    .housing-table th, .housing-table td {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======= RESPONSIVE DESIGN ======= */
+@media screen and (max-width: 1024px) {
+    #home {
+        grid-template-columns: 1fr;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .big-image {
+        grid-column: span 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-title h1 {
+        font-size: 2em;
+    }
+
+    .home-title p {
+        font-size: 1em;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .submit {
+        font-size: 14px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+}

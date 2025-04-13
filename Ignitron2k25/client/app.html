@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banglore Home Price Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
+    <style>
+        /* Basic styling for the navbar */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Home Section with grid layout for images */
+        /* Home Section with grid layout for images */
+	#home {
+		display: grid;
+		grid-template-columns: 1fr 1.5fr; /* Left div (4 images) takes 1 fraction and right div (1 big image) takes 1.5 */
+		grid-gap: 20px;
+		padding: 20px;
+		background-color: #f9f9f9;
+	}
+
+	/* Left side with image grid */
+	.image-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr; /* 2 images per row */
+		grid-gap: 10px;
+	}
+
+	.image-grid img {
+		width: 100%;
+		height: 80%;
+		border-radius: 10px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	
+
+	/* Right side with a big image */
+	.big-image {
+		grid-column: span 1; /* Ensures the image spans the entire right column */
+		width: 100%; /* Make the image take up full width */
+		height: 90%; /* Maintain aspect ratio */
+		border-radius: 10px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	
+
+        /* Styling for the main content sections */
+        .section {
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Add styles for the switch fields if necessary */
+        .switch-field {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .switch-field input {
+            margin-right: 5px;
+        }
+        
+        .form {
+            margin: 20px;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+		 /* Title Section Styling */
+		 .home-title {
+            grid-column: span 2; /* Makes the title span across both columns */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .home-title h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .home-title p {
+            font-size: 1.2em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#prediction">Prediction</a>
+        <a href="#more">More</a>
+    </nav>
+
+    <!-- Home Section -->
+
+    <div id="home" class="section">
+
+<!-- Title Section -->
+<div class="home-title">
+	<!-- Fancy Headings -->
+<h1 class="fancy-text">Silicon City Home Price Prediction using AI & ML</h1>
+<h1 class="sub-heading">Explore Beautiful Homes in Bangalore</h1>
+
+	<p>This project leverages Artificial Intelligence (AI) and Machine Learning (ML) to estimate home prices in Bangalore based on user-input parameters such as area (square feet), number of BHKs, bathrooms, and location. The model is trained using a real-estate dataset containing historical housing price trends, enabling it to predict the cost of a property with high accuracy</p>
+</div>
+		
+        <!-- Left side with image grid -->
+        <div class="image-grid">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1S6Ymlu11wllF5LIGfsxuP5-FDlLnzH5mcA&s" alt="House 1">
+            <img src="https://www.casagrand.co.in/wp-content/uploads/2022/04/aquene-featured-1.jpg?ver=1.201" alt="House 2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx1A5631teeKys5FFI3JRgZnYq3tA0yBX3lg&s" alt="House 3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZCxAtsZG0XwE4jNgaeG-DDWlVdVVioXCQ-w&s" alt="House 4">
+        </div>
+
+        <!-- Right side with a big image -->
+        <div>
+            <img src="https://www.casagrand.co.in/wp-content/uploads/2024/05/2.png?ver=1.201" class="big-image" alt="Big House Image">
+        </div>
+    </div>
+<!-- Prediction Section -->
+<div id="prediction" class="section">
+    <h2 style="text-align: left; font-family: 'cursive'; font-size: 2.5em; font-weight: 600;">&nbsp;&nbsp;&nbsp;&nbsp;Predict Home Price</h2>
+
+
+    <div style="display: flex; justify-content: space-between;">
+        <!-- Left side with form -->
+        <form class="form" style="flex-basis: 48%;">
+            <h2>Area (Square Feet)</h2>
+            <input class="area" type="text" id="uiSqft" name="Squareft" value="1000">
+            
+            <h2>BHK</h2>
+            <div class="switch-field">
+                <input type="radio" id="radio-bhk-1" name="uiBHK" value="1"/>
+                <label for="radio-bhk-1">1</label>
+                <input type="radio" id="radio-bhk-2" name="uiBHK" value="2" checked/>
+                <label for="radio-bhk-2">2</label>
+                <input type="radio" id="radio-bhk-3" name="uiBHK" value="3"/>
+                <label for="radio-bhk-3">3</label>
+                <input type="radio" id="radio-bhk-4" name="uiBHK" value="4"/>
+                <label for="radio-bhk-4">4</label>
+                <input type="radio" id="radio-bhk-5" name="uiBHK" value="5"/>
+                <label for="radio-bhk-5">5</label>
+            </div>
+
+            <h2>Bath</h2>
+            <div class="switch-field">
+                <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1"/>
+                <label for="radio-bath-1">1</label>
+                <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked/>
+                <label for="radio-bath-2">2</label>
+                <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3"/>
+                <label for="radio-bath-3">3</label>
+                <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4"/>
+                <label for="radio-bath-4">4</label>
+                <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5"/>
+                <label for="radio-bath-5">5</label>
+            </div>
+
+            <h2>Location</h2>
+            <div>
+                <select class="location" id="uiLocations">
+                    <option value="" disabled="disabled" selected="selected">Choose a Location</option>
+                    <option>Electronic City</option>
+                    <option>Rajaji Nagar</option>
+                </select>
+            </div>
+
+            <button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+            <div id="uiEstimatedPrice" class="result">
+                <h2></h2>
+            </div>
+        </form>
+
+        <!-- Right side with detailed summary -->
+        <div style="flex-basis: 48%; padding: 20px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+			<h1 style="font-weight: 700;">How This Project Works</h1>
+			<p style="font-weight: 400;">Hello, I am <strong style="font-weight: 700;">Rohit Sharma</strong>, and this website is a <strong style="font-weight: 700;">predictive model</strong> for estimating home prices in Bangalore. I have used a dataset from <strong style="font-weight: 700;">Kaggle</strong>, which I imported as a CSV file. The dataset contains valuable real estate data such as property size, location, number of bedrooms, and other important factors that affect property prices. After processing the data with Python libraries like <strong style="font-weight: 700;">NumPy</strong> and <strong style="font-weight: 700;">Pandas</strong>, I cleaned the dataset, removed any inconsistencies, and handled missing values to ensure the quality of the data. Then, I built the predictive model using <strong style="font-weight: 700;">Scikit-learn</strong>, achieving a high accuracy of about 90%. The model uses regression techniques to predict the price based on input features, and I tested it extensively to ensure its reliability across various scenarios. The dataset was split into training and testing sets, and cross-validation techniques were applied to fine-tune the model's performance. The model's accuracy reflects its ability to generalize well on unseen data, making it useful for practical applications. With further enhancements, the model could be adapted to different regions, providing broader coverage of the housing market. This predictive model can be used by potential buyers, real estate agents, and investors to make informed decisions in the housing market of Bangalore.</p>
+			
+			<p style="font-weight: 550;">The backend is powered by <strong style="font-weight: 700;">Flask</strong> for handling HTTP requests, and the frontend is created using <strong style="font-weight: 700;">HTML</strong>, <strong style="font-weight: 700;">CSS</strong>, and <strong style="font-weight: 700;">JavaScript</strong>. The Flask app serves as the bridge between the frontend and the model, processing the user's input and sending the results back to the user interface. The website is responsive, meaning it works smoothly across various devices such as desktops, tablets, and smartphones. I utilized modern web development practices to ensure a seamless user experience. The user interface allows users to easily input key parameters like <strong style="font-weight: 700;">BHK</strong>, <strong style="font-weight: 700;">Bathroom</strong>, <strong style="font-weight: 700;">Square Footage</strong>, and select other relevant features that influence property pricing. Upon entering the required details, users can get an instant prediction of the price based on the trained model. Additionally, I have implemented error handling to ensure that the application works even if incorrect inputs are given. This feature includes validating input types, checking for missing data, and providing user-friendly error messages when needed. To enhance usability, the website also displays a visual representation of the predicted price, helping users understand the relationship between their inputs and the estimated value. The platform is designed to help potential buyers and investors get an approximate idea of home prices based on the specified features, allowing them to make better decisions. Furthermore, it allows users to explore and understand the factors that influence home prices in the city of Bangalore, providing them with insights into the real estate market trends and helping them stay informed.</p>
+		</div>
+		
+		
+    </div>
+</div>
+   <!-- More Section -->
+<div id="more" class="section">
+    <h2>More Information</h2>
+
+    <!-- Tech Stack Logos & Description -->
+    <div class="tech-stack">
+        <h3>Technologies Used</h3>
+        <div class="logos" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width: 50px; height: 50px; filter: saturate(2); transition: filter 0.3s ease-in-out;">
+			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" style="width: 50px; height: 50px; filter: saturate(2); transition: filter 0.3s ease-in-out;">
+			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" style="width: 50px; height: 50px; filter: saturate(2); transition: filter 0.3s ease-in-out;">
+			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" style="width: 50px; height: 50px; filter: saturate(2); transition: filter 0.3s ease-in-out;">
+			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" style="width: 50px; height: 50px; filter: saturate(2); transition: filter 0.3s ease-in-out;">
+			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter Notebook" style="width: 50px; height: 50px; filter: saturate(2); transition: filter 0.3s ease-in-out;">
+			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="VS Code" style="width: 50px; height: 50px; filter: saturate(2); transition: filter 0.3s ease-in-out;">
+			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" style="width: 50px; height: 50px; filter: saturate(2); transition: filter 0.3s ease-in-out;">
+			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" style="width: 50px; height: 50px; filter: saturate(2); transition: filter 0.3s ease-in-out;">
+			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="width: 50px; height: 50px; filter: saturate(2); transition: filter 0.3s ease-in-out;">
+			<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" style="width: 50px; height: 50px; filter: saturate(2); transition: filter 0.3s ease-in-out;">
+		</div>
+		
+        
+		<p class="tech-description">
+			This project leverages <span>Python</span> for data processing and machine learning. <span>NumPy & Pandas</span> handle data manipulation,  
+			while <span>Matplotlib</span> is used for visualization. <span>Scikit-learn (sklearn)</span> powers the predictive model.  
+			The backend runs on <span>Flask</span>, and the frontend is built using <span>HTML, CSS, and JavaScript</span>.  
+			Development took place in <span>Jupyter Notebook & VS Code</span>, with <span>Postman</span> aiding API testing.  
+		</p>
+		
+    </div>
+
+    <!-- Popular Housing Societies Table -->
+    <h3>Popular Housing Societies in Bangalore</h3>
+    <table class="housing-table">
+        <thead>
+            <tr>
+                <th>Society Name</th>
+                <th>Location</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Prestige Shantiniketan</td>
+                <td>Whitefield</td>
+                <td><a href="https://www.prestigeconstructions.com" target="_blank">Visit</a></td>
+            </tr>
+            <tr>
+                <td>Brigade Gateway</td>
+                <td>Rajajinagar</td>
+                <td><a href="https://www.brigadegroup.com" target="_blank">Visit</a></td>
+            </tr>
+            <tr>
+                <td>Sobha City</td>
+                <td>Thanisandra</td>
+                <td><a href="https://www.sobha.com" target="_blank">Visit</a></td>
+            </tr>
+            <tr>
+                <td>Purva Palm Beach</td>
+                <td>Hennur</td>
+                <td><a href="https://www.puravankara.com" target="_blank">Visit</a></td>
+            </tr>
+            <tr>
+                <td>Embassy Lake Terraces</td>
+                <td>Hebbal</td>
+                <td><a href="https://www.embassyindia.com" target="_blank">Visit</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
